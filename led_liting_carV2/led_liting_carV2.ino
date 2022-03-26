@@ -1,4 +1,4 @@
-#include <Adafruit_NeoPixel.h> // подключаем библиотеку
+ #include <Adafruit_NeoPixel.h> // подключаем библиотеку
 #define IN_LEFT_PLAF A3
 #define IN_RIGHT_PLAF A2
 #define IN_CENTER_PLAF A1
@@ -177,15 +177,15 @@ String LedPlafInput(int left, int right, int center, int swich, int button){
       int limit = 100;
       String result = "0";
       String val1, val2, val3, val4, val5 = "";
-      if (analogRead(left) > limit){
+      if (analogRead(left) < limit){ //плафоны притянуты к плюсу
       val1 = "1";  
       }else{val1 = "0";  }
       
-      if (analogRead(right) > limit){
+      if (analogRead(right) < limit){
       val2 = "1" ;
       }else{val2 = "0";}
       
-      if (analogRead(center) > limit){
+      if (analogRead(center) < limit){
       val3 = "1" ;  
       }else{val3 = "0";}
 
